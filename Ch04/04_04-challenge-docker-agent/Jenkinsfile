@@ -24,7 +24,10 @@ pipeline {
                 cache( caches: [
         arbitraryFileCache(path: '/tmp')
 ]) 
+                {
+                    
                 sh "go build --tags extended"
+                }
             }
         }
         stage('Test') {
